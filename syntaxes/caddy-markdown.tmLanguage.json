@@ -18,11 +18,11 @@
 					"name": "punctuation.definition.markdown"
 				},
 
-				"5": {
+				"4": {
 					"name": "fenced_code.block.language"
 				},
 
-				"6": {
+				"5": {
 					"name": "fenced_code.block.language.attributes"
 				}
 			},
@@ -54,11 +54,11 @@
 					"name": "punctuation.definition.markdown"
 				},
 
-				"5": {
+				"4": {
 					"name": "fenced_code.block.language"
 				},
 
-				"6": {
+				"5": {
 					"name": "fenced_code.block.language.attributes"
 				}
 			},

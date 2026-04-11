@@ -1,5 +1,5 @@
 import * as path from 'node:path';
-import { languages, workspace, ExtensionContext } from 'vscode';
+import { languages, ExtensionContext } from 'vscode';
 import { LanguageClient, LanguageClientOptions, ServerOptions, TransportKind } from 'vscode-languageclient';
 
 import { CaddyfileDocumentFormattingEditProvider } from './formatter';
@@ -34,11 +34,11 @@ export function activate(context: ExtensionContext) {
 				scheme: 'file',
 				language: 'caddyfile',
 			},
+			{
+				scheme: 'untitled',
+				language: 'caddyfile',
+			},
 		],
-
-		synchronize: {
-			fileEvents: workspace.createFileSystemWatcher('**/.clientrc'),
-		},
 	};
 
 	client = new LanguageClient('caddyfileLanguageServer', 'Caddyfile Language Server', serverOptions, clientOptions);

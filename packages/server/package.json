@@ -7,19 +7,19 @@
 	"private": true,
 	"main": "dist/index.js",
 	"scripts": {
-		"build": "$npm_node_execpath build.mjs",
+		"build": "node build.mjs",
 		"clean": "rimraf .turbo dist out",
-		"dev": "cross-env NODE_ENV=development pnpm run build"
+		"dev": "cross-env NODE_ENV=development node build.mjs"
 	},
 	"dependencies": {
 		"vscode-languageserver": "6.1.1",
-		"vscode-languageserver-textdocument": "1.0.7"
+		"vscode-languageserver-textdocument": "1.0.12"
 	},
 	"devDependencies": {
-		"@types/node": "18.16.10",
+		"@types/node": "18.19.130",
 		"cross-env": "7.0.3",
 		"esbuild": "0.25.0",
-		"rimraf": "5.0.0",
-		"typescript": "5.0.4"
+		"rimraf": "5.0.10",
+		"typescript": "5.9.3"
 	}
 }

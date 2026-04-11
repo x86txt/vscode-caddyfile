@@ -114,17 +114,10 @@ async function validateTextDocument(document: TextDocument): Promise<void> {
 		for (let i = globalOptionsPosition.start.line + 1; i < globalOptionsPosition.end.line; i++) {
 			const line = document.getText({ start: { line: i, character: 0 }, end: { line: i + 1, character: 0 } });
 			const trimmed = line.trim();
-			let option: string;
-
-			if (trimmed.includes(' ')) {
-				const sections = trimmed.split(' ');
-				option = sections[0];
-			} else {
-				option = trimmed;
-			}
+			const option = trimmed.split(/\s+/, 1)[0];
 
 			if (option === '') {
-				return;
+				continue;
 			}
 
 			const start = line.indexOf(trimmed.charAt(0));
@@ -159,19 +152,20 @@ async function validateTextDocument(document: TextDocument): Promise<void> {
 		// 	});
 
 		// Janky way of checking for any other global option blocks.
-		let start: number = 0;
+		let start: number = -1;
 		for (let i = globalOptionsPosition.end.line + 1; i < document.lineCount; i++) {
 			const line = document.getText({
 				start: { line: i, character: 0 },
 				end: { line: i + 1, character: 0 },
 			});
+			const trimmed = line.trim();
 
-			if (line === '{\n') {
+			if (trimmed === '{') {
 				start = i;
 				continue;
 			}
 
-			if (start === 0 || line !== '}\n') {
+			if (start === -1 || trimmed !== '}') {
 				continue;
 			}
 

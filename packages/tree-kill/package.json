@@ -14,10 +14,10 @@
 		"clean": "rimraf .turbo dist node_modules/.cache"
 	},
 	"devDependencies": {
-		"@types/node": "18.16.10",
+		"@types/node": "18.19.130",
 		"cross-env": "7.0.3",
-		"rimraf": "5.0.0",
+		"rimraf": "5.0.10",
 		"tsup": "6.7.0",
-		"typescript": "5.0.4"
+		"typescript": "5.9.3"
 	}
 }

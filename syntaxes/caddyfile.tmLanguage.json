@@ -66,12 +66,12 @@
 		"path": {
 			"patterns": [
 				{
-					"name": "keyword.control.caddyfile",
+					"name": "string.unquoted.path.caddyfile",
 					"match": "(unix/)*/[a-zA-Z0-9_\\-./*]+"
 				},
 				{
 					"name": "variable.other.property.caddyfile",
-					"match": "\\*.[a-z]{1,5}"
+					"match": "\\*\\.[a-z]{1,5}"
 				},
 				{
 					"name": "variable.other.property.caddyfile",
@@ -88,27 +88,27 @@
 			"patterns": [
 				{
 					"comment": "Domains and URLs",
-					"name": "keyword.control.caddyfile",
+					"name": "constant.other.reference.caddyfile",
 					"match": "(https?://)*[a-z0-9-\\*]*(?:\\.[a-zA-Z]{2,})+(:[0-9]+)*\\S*"
 				},
 				{
 					"comment": "localhost",
-					"name": "keyword.control.caddyfile",
+					"name": "constant.other.reference.caddyfile",
 					"match": "localhost(:[0-9]+)*"
 				},
 				{
 					"comment": "IPv4",
-					"name": "keyword.control.caddyfile",
+					"name": "constant.other.reference.caddyfile",
 					"match": "((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)"
 				},
 				{
 					"comment": "IPv6",
-					"name": "keyword.control.caddyfile",
+					"name": "constant.other.reference.caddyfile",
 					"match": "(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))"
 				},
 				{
 					"comment": "Ports",
-					"name": "keyword.control.caddyfile",
+					"name": "constant.numeric.integer.decimal.caddyfile",
 					"match": ":[0-9]+"
 				}
 			]
@@ -156,7 +156,7 @@
 		"placeholders": {
 			"patterns": [
 				{
-					"name": "keyword.control.Caddyfile",
+					"name": "variable.other.placeholder.caddyfile",
 					"match": "\\{[\\[\\]\\w.\\$+-]+\\}"
 				}
 			]
@@ -236,7 +236,7 @@
 						"0": { "name": "punctuation.section.embedded.begin.caddyfile" },
 						"1": { "name": "punctuation.definition.string.begin" },
 						"2": { "name": "keyword.operator.heredoc.caddyfile" },
-						"4": { "name": "invalid.illegal.trailing-whitespace.caddyfile" }
+						"3": { "name": "invalid.illegal.trailing-whitespace.caddyfile" }
 					},
 
 					"end": "^\\s*(\\2)(?![A-Za-z0-9_\\x{7f}-\\x{10ffff}])",
@@ -259,7 +259,7 @@
 						"0": { "name": "punctuation.section.embedded.begin.caddyfile" },
 						"1": { "name": "punctuation.definition.string.begin" },
 						"2": { "name": "keyword.operator.heredoc.caddyfile" },
-						"4": { "name": "invalid.illegal.trailing-whitespace.caddyfile" }
+						"3": { "name": "invalid.illegal.trailing-whitespace.caddyfile" }
 					},
 
 					"end": "^\\s*(\\2)(?![A-Za-z0-9_\\x{7f}-\\x{10ffff}])",
@@ -282,7 +282,7 @@
 						"0": { "name": "punctuation.section.embedded.begin.caddyfile" },
 						"1": { "name": "punctuation.definition.string.begin" },
 						"2": { "name": "keyword.operator.heredoc.caddyfile" },
-						"4": { "name": "invalid.illegal.trailing-whitespace.caddyfile" }
+						"3": { "name": "invalid.illegal.trailing-whitespace.caddyfile" }
 					},
 
 					"end": "^\\s*(\\2)(?![A-Za-z0-9_\\x{7f}-\\x{10ffff}])",
@@ -305,7 +305,7 @@
 						"0": { "name": "punctuation.section.embedded.begin.caddyfile" },
 						"1": { "name": "punctuation.definition.string.begin" },
 						"2": { "name": "keyword.operator.heredoc.caddyfile" },
-						"4": { "name": "invalid.illegal.trailing-whitespace.caddyfile" }
+						"3": { "name": "invalid.illegal.trailing-whitespace.caddyfile" }
 					},
 
 					"end": "^\\s*(\\2)(?![A-Za-z0-9_\\x{7f}-\\x{10ffff}])",
@@ -328,7 +328,7 @@
 						"0": { "name": "punctuation.section.embedded.begin.caddyfile" },
 						"1": { "name": "punctuation.definition.string.begin" },
 						"2": { "name": "keyword.operator.heredoc.caddyfile" },
-						"4": { "name": "invalid.illegal.trailing-whitespace.caddyfile" }
+						"3": { "name": "invalid.illegal.trailing-whitespace.caddyfile" }
 					},
 
 					"end": "^\\s*(\\2)(?![A-Za-z0-9_\\x{7f}-\\x{10ffff}])",
@@ -348,7 +348,7 @@
 						"0": { "name": "punctuation.section.embedded.begin.caddyfile" },
 						"1": { "name": "punctuation.definition.string.caddyfile" },
 						"2": { "name": "keyword.operator.heredoc.caddyfile" },
-						"4": { "name": "invalid.illegal.trailing-whitespace.caddyfile" }
+						"3": { "name": "invalid.illegal.trailing-whitespace.caddyfile" }
 					},
 
 					"end": "^\\s*(\\2)(?![A-Za-z0-9_\\x{7f}-\\x{10ffff}])",

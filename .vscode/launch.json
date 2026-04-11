@@ -13,7 +13,7 @@
             "runtimeExecutable": "${execPath}",
             "args": ["--extensionDevelopmentPath=${workspaceFolder}"],
             "outFiles": ["${workspaceFolder}/packages/*/dist/*"],
-            "preLaunchTask": "dev",
+            "preLaunchTask": "build",
 			"sourceMaps": true,
 			"smartStep": true,
         },
@@ -24,7 +24,7 @@
             "runtimeExecutable": "${execPath}",
             "args": ["--extensionDevelopmentPath=${workspaceFolder}"],
             "outFiles": ["${workspaceFolder}/packages/*/dist/*"],
-            "preLaunchTask": "npm: build",
+            "preLaunchTask": "build",
         }
     ]
 }

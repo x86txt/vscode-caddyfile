@@ -1,7 +1,7 @@
 {
-	"name": "caddyfile-syntax",
-	"displayName": "Caddyfile Syntax by Secunit",
-	"description": "Rich Caddyfile Syntax Highlighting for Visual Studio Code",
+	"name": "caddyfile-support",
+	"displayName": "Caddyfile Support",
+	"description": "Rich Caddyfile support for Visual Studio Code",
 	"version": "0.4.0",
 	"license": "MIT",
 	"private": true,
@@ -27,8 +27,8 @@
 		"url": "https://github.com/x86txt/vscode-caddyfile/issues"
 	},
 	"engines": {
-		"node": ">=24.14.1",
-		"vscode": ">=1.75.0"
+		"node": ">=16.13.0",
+		"vscode": ">=1.67.0"
 	},
 	"scripts": {
 		"vscode:prepublish": "turbo run build",
@@ -40,15 +40,15 @@
 		"install:deps": "node scripts/install-deps.mjs"
 	},
 	"devDependencies": {
-		"@vscode/vsce": "^2.32.0",
-		"prettier": "^3.4.2",
-		"rimraf": "^6.0.1",
-		"turbo": "^1.13.4",
-		"typescript": "^5.9.3"
+		"@vscode/vsce": "2.32.0",
+		"prettier": "2.8.8",
+		"rimraf": "5.0.10",
+		"turbo": "1.13.4",
+		"typescript": "5.9.3"
 	},
 	"extensionDependencies": [],
 	"activationEvents": [
-
+		"onLanguage:caddyfile",
 		"workspaceContains:**/Caddyfile",
 		"workspaceContains:**/Caddyfile*",
 		"workspaceContains:**/caddyfile",
@@ -69,19 +69,15 @@
 					"caddyfile",
 					"caddy"
 				],
-				"filenames": [
-					"Caddyfile",
-					"caddyfile"
-				],
-				"filenamePatterns": [
-					"Caddyfile*",
-					"caddyfile*"
-				],
 				"extensions": [
-					".caddy",
-					".Caddy",
-					".caddyfile",
-					".Caddyfile"
+					"Caddyfile",
+					"Caddyfile*",
+					"caddyfile",
+					"caddyfile*",
+					"*.Caddyfile",
+					"*.caddyfile",
+					"*.caddy",
+					"*.Caddy"
 				]
 			},
 			{
@@ -91,8 +87,8 @@
 					"Caddyfile-test"
 				],
 				"extensions": [
-					".Caddyfiletest",
-					".caddyfiletest"
+					"*.Caddyfiletest",
+					"*.caddyfiletest"
 				]
 			}
 		],

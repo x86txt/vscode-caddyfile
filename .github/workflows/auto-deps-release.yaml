@@ -1,0 +1,110 @@
+name: Auto Dependency Update and Release
+
+on:
+  schedule:
+    - cron: "0 */12 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: auto-deps-release
+  cancel-in-progress: false
+
+jobs:
+  update-and-release:
+    name: Update, Build, and Release
+    runs-on: ubuntu-latest
+    if: github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile=false
+
+      - name: Update dependency versions
+        run: pnpm up -r --latest
+
+      - name: Apply security remediations
+        run: pnpm audit --fix || true
+
+      - name: Detect dependency changes
+        id: changes
+        shell: bash
+        run: |
+          if git diff --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Rebuild workspace
+        if: steps.changes.outputs.changed == 'true'
+        run: pnpm build
+
+      - name: Bump extension version
+        if: steps.changes.outputs.changed == 'true'
+        id: version
+        shell: bash
+        run: |
+          NEW_VERSION="$(npm version patch --no-git-tag-version | sed 's/^v//')"
+          echo "value=${NEW_VERSION}" >> "$GITHUB_OUTPUT"
+          echo "tag=v${NEW_VERSION}" >> "$GITHUB_OUTPUT"
+
+      - name: Commit and tag
+        if: steps.changes.outputs.changed == 'true'
+        shell: bash
+        env:
+          RELEASE_VERSION: ${{ steps.version.outputs.value }}
+          RELEASE_TAG: ${{ steps.version.outputs.tag }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add package.json pnpm-lock.yaml packages/*/package.json
+          [ -f bun.lock ] && git add bun.lock || true
+          git commit -m "chore(deps): update dependencies and release v${RELEASE_VERSION}"
+          git tag "${RELEASE_TAG}"
+          git push origin HEAD
+          git push origin "${RELEASE_TAG}"
+
+      - name: Package extension
+        if: steps.changes.outputs.changed == 'true'
+        run: pnpm package
+
+      - name: Publish to Open VSX
+        if: steps.changes.outputs.changed == 'true'
+        uses: HaaLeo/publish-vscode-extension@v1
+        with:
+          pat: ${{ secrets.OPEN_VSX_TOKEN }}
+          extensionFile: "./dist/caddyfile-support.vsix"
+          packagePath: ""
+
+      - name: Publish to Visual Studio Marketplace
+        if: steps.changes.outputs.changed == 'true'
+        uses: HaaLeo/publish-vscode-extension@v1
+        with:
+          pat: ${{ secrets.VS_MARKETPLACE_TOKEN }}
+          registryUrl: https://marketplace.visualstudio.com
+          extensionFile: "./dist/caddyfile-support.vsix"
+          packagePath: ""
+
+      - name: Create GitHub release
+        if: steps.changes.outputs.changed == 'true'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.version.outputs.tag }}
+          generate_release_notes: true

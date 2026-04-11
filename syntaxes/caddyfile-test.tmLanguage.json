@@ -24,7 +24,7 @@
 
 					"end": "^(\\})$",
 					"endCaptures": {
-						"0": { "name": "punctuation.section.embedded.start.json" }
+						"0": { "name": "punctuation.section.embedded.end.json" }
 					},
 
 					"patterns": [
