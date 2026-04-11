@@ -8,19 +8,21 @@ on:
 jobs:
   deploy:
     name: Deploy
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
 
     steps:
       - name: Code Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Install pnpm
-        uses: pnpm/action-setup@v2
+        uses: pnpm/action-setup@v4
+        with:
+          version: 8.5.0
 
       - name: Install Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 24
           cache: pnpm
 
       - name: Install Dependencies
@@ -34,7 +36,7 @@ jobs:
         uses: HaaLeo/publish-vscode-extension@v1
         with:
           pat: ${{ secrets.OPEN_VSX_TOKEN }}
-          extensionFile: "./dist/caddyfile-support.vsix"
+          extensionFile: "./dist/caddyfile-syntax.vsix"
           packagePath: ""
 
       - name: Publish to Visual Studio Marketplace
@@ -42,5 +44,5 @@ jobs:
         with:
           pat: ${{ secrets.VS_MARKETPLACE_TOKEN }}
           registryUrl: https://marketplace.visualstudio.com
-          extensionFile: "./dist/caddyfile-support.vsix"
+          extensionFile: "./dist/caddyfile-syntax.vsix"
           packagePath: ""

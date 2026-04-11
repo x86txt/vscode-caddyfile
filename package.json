@@ -32,7 +32,7 @@
 	},
 	"scripts": {
 		"vscode:prepublish": "turbo run build",
-		"package": "mkdir -p dist && vsce package --no-dependencies --no-yarn --out dist/caddyfile-support.vsix",
+		"package": "mkdir -p dist && vsce package --no-dependencies --no-yarn --out dist/caddyfile-syntax.vsix",
 		"build": "turbo run build",
 		"dev": "turbo run dev --no-cache --parallel --continue",
 		"lint": "turbo run lint",
