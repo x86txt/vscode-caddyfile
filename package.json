@@ -2,7 +2,7 @@
 	"name": "caddyfile-syntax",
 	"displayName": "Caddyfile Syntax by Secunit",
 	"description": "Rich Caddyfile Syntax Highlighting for Visual Studio Code",
-	"version": "0.4.0",
+	"version": "0.4.1",
 	"license": "MIT",
 	"private": true,
 	"workspaces": [
@@ -41,14 +41,13 @@
 	},
 	"devDependencies": {
 		"@vscode/vsce": "^2.32.0",
-		"prettier": "^3.4.2",
-		"rimraf": "^6.0.1",
+		"prettier": "^3.8.2",
+		"rimraf": "^6.1.3",
 		"turbo": "^1.13.4",
 		"typescript": "^5.9.3"
 	},
 	"extensionDependencies": [],
 	"activationEvents": [
-
 		"workspaceContains:**/Caddyfile",
 		"workspaceContains:**/Caddyfile*",
 		"workspaceContains:**/caddyfile",
@@ -133,6 +132,11 @@
 					"description": "Location of the `caddy` executable to use for code formatting and linting."
 				}
 			}
+		}
+	},
+	"pnpm": {
+		"overrides": {
+			"esbuild@<=0.24.2": ">=0.25.0"
 		}
 	}
 }
