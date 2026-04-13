@@ -2,7 +2,7 @@
 	"name": "caddyfile-syntax",
 	"displayName": "Caddyfile Syntax by Secunit",
 	"description": "Rich Caddyfile Syntax Highlighting for Visual Studio Code",
-	"version": "0.4.2",
+	"version": "0.4.3",
 	"license": "MIT",
 	"private": true,
 	"workspaces": [
