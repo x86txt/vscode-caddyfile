@@ -2,6 +2,7 @@ lockfileVersion: '6.0'
 
 overrides:
   esbuild@<=0.24.2: '>=0.25.0'
+  uuid@<14.0.0: '>=14.0.0'
 
 importers:
 
@@ -212,7 +213,7 @@ packages:
     dependencies:
       '@azure/msal-common': 16.5.1
       jsonwebtoken: 9.0.3
-      uuid: 8.3.2
+      uuid: 14.0.0
     dev: true
 
   /@esbuild/aix-ppc64@0.25.0:
@@ -2748,8 +2749,8 @@ packages:
     dev: true
     optional: true
 
-  /uuid@8.3.2:
-    resolution: {integrity: sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==}
+  /uuid@14.0.0:
+    resolution: {integrity: sha512-Qo+uWgilfSmAhXCMav1uYFynlQO7fMFiMVZsQqZRMIXp0O7rR7qjkj+cPvBHLgBqi960QCoo/PH2/6ZtVqKvrg==}
     hasBin: true
     dev: true
 
