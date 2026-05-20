@@ -3,6 +3,8 @@ lockfileVersion: '6.0'
 overrides:
   esbuild@<=0.24.2: '>=0.25.0'
   uuid@<14.0.0: '>=14.0.0'
+  turbo@<=2.9.13: '>=2.9.14'
+  turbo@>=1.1.0 <2.9.14: '>=2.9.14'
 
 importers:
 
