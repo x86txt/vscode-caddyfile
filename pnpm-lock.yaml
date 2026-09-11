@@ -717,8 +717,8 @@ packages:
       picomatch: 2.3.2
     dev: true
 
-  /argparse@3.0.1:
-    resolution: {integrity: sha512-nM4mHF/KM1v59ZNKX7zfusQz5wUAxR511YG8Vo6TyiV4aqhu++rbJW4v04xsWhpSsHFj66flT8P7znVpyO20xQ==}
+  /argparse@3.0.2:
+    resolution: {integrity: sha512-mFdDM6WqWKraGLsVb+C9CahPnzTXOefAOLq3jYcca2YZ8bEWpr++Tzj+zSaKW9+X9L5uSxcm1AZ3Y6aZJ09OhQ==}
     dev: true
 
   /array-union@2.1.0:
@@ -1668,7 +1668,7 @@ packages:
     resolution: {integrity: sha512-9/7gE95FNPkfUWrjJIoHZza2iLmuJlPD0UNMxPi7bxUrbCR525YZY0r+zyfes0dZI5ZZ/uNIXUJca0pJvtw41g==}
     hasBin: true
     dependencies:
-      argparse: 3.0.1
+      argparse: 3.0.2
       entities: 8.1.0
       linkify-it: 6.1.0
       mdurl: 2.1.0
