@@ -2,7 +2,7 @@
 	"name": "caddyfile-syntax",
 	"displayName": "Caddyfile Syntax by Secunit",
 	"description": "Rich Caddyfile Syntax Highlighting for Visual Studio Code",
-	"version": "0.4.120",
+	"version": "0.4.121",
 	"license": "MIT",
 	"private": true,
 	"workspaces": [
@@ -142,7 +142,8 @@
 			"turbo@>=1.1.0 <2.9.14": ">=2.9.14",
 			"esbuild@>=0.17.0 <0.28.1": ">=0.28.1",
 			"markdown-it@<=14.1.1": ">=14.2.0",
-			"brace-expansion@<=5.0.7": ">=5.0.8"
+			"brace-expansion@<=5.0.7": ">=5.0.8",
+			"@azure/msal-node@>=5.0.0-beta.0 <7.1.0": ">=7.1.0"
 		}
 	}
 }
