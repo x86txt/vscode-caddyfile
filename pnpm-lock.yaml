@@ -177,8 +177,8 @@ packages:
       - supports-color
     dev: true
 
-  /@azure/identity@4.14.0:
-    resolution: {integrity: sha512-8utCLdTZn14CiAe0HW4JbtzUMsc0mdDwnjUvStFMrR4IxQP8S2eL9zVAdplpfORVJGYmidZElpeXRYjJQ4UyUw==}
+  /@azure/identity@4.14.1:
+    resolution: {integrity: sha512-HHuuFrmN1uuF9D5A6aAo5eHzNFNX4Q+P4SksZqDKse5YaJFFy/zDLG3wXHEV2FVGgetZ3QM8jGURNBtnQYf1NQ==}
     engines: {node: '>=22.0.0'}
     dependencies:
       '@azure/abort-controller': 2.2.0
@@ -637,7 +637,7 @@ packages:
     engines: {node: '>= 16'}
     hasBin: true
     dependencies:
-      '@azure/identity': 4.14.0
+      '@azure/identity': 4.14.1
       '@vscode/vsce-sign': 2.1.0
       azure-devops-node-api: 12.5.0
       chalk: 2.4.2
