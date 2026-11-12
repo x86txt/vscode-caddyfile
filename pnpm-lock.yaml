@@ -20,8 +20,8 @@ importers:
         specifier: ^2.32.0
         version: 2.32.0
       prettier:
-        specifier: ^3.10.0
-        version: 3.10.0
+        specifier: ^3.10.1
+        version: 3.10.1
       rimraf:
         specifier: ^6.1.4
         version: 6.1.4
@@ -1263,8 +1263,8 @@ packages:
       is-glob: 4.0.3
     dev: true
 
-  /glob@14.0.5:
-    resolution: {integrity: sha512-nbKW5Sl53DEM5PkmZ5Jwfeyss1ohuqcgOBjOarSjz1fp8W4ss4EOOvKADQRbApD6JmVBX+HkpZYfBez4wXbeQQ==}
+  /glob@14.0.6:
+    resolution: {integrity: sha512-OwXjVP2svY5EyLY75Vek96C8qK43gqrt4xsZ+qSILdnaEiJPXkd62mcfUSNx/TQErQRdu5uM5kF67sfONragKw==}
     engines: {node: 18 || 20 || >=22}
     dependencies:
       minimatch: 11.0.8
@@ -1871,8 +1871,8 @@ packages:
     dev: true
     optional: true
 
-  /prettier@3.10.0:
-    resolution: {integrity: sha512-mBi4765LgjO1PFjlEs7pUeK0nb1bw71c+N4/ItfeUWNdY5cV2pRKaFpbbFRYmDJMO+5ZwzGxHRqHxFZna7iv5w==}
+  /prettier@3.10.1:
+    resolution: {integrity: sha512-70vp3ZUYoPlFbF9uiTdXHUUCGEIp7d4+6p+8DYbkm2jP7x/3i/paXVF6dopSI3zd/CEitrZN1rc4i85xWmmXlg==}
     engines: {node: '>=14'}
     hasBin: true
     dev: true
@@ -1966,7 +1966,7 @@ packages:
     resolution: {integrity: sha512-l0OE8wL34P4nJH/H2ffoaniAokM2qSmrtXHmlpvYr5AVVX8msAyW0l8NVJFDxlSK4u3Uh/f41cQheDVdnYijwQ==}
     hasBin: true
     dependencies:
-      glob: 14.0.5
+      glob: 14.0.6
     dev: true
 
   /rimraf@6.1.4:
@@ -1974,7 +1974,7 @@ packages:
     engines: {node: 20 || >=22}
     hasBin: true
     dependencies:
-      glob: 14.0.5
+      glob: 14.0.6
       package-json-from-dist: 1.0.1
     dev: true
 
